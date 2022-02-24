@@ -24,4 +24,7 @@ Route::get('/manage-student', [StudentController::class, 'manage'])->name('manag
 Route::get('/new-student', [StudentController::class, 'creat'])->name('new-student');
 Route::get('/edit-student/{id}', [StudentController::class, 'edit'])->name('edit-student');
 Route::post('/update-student/{id}', [StudentController::class, 'update'])->name('update-student');
+Route::post('/delete-student/{id}', [StudentController::class, 'delete'])->name('delete-student');
+
+
 Route::post('/add-blog',[BlogController::class, 'store'])->name('add-blog');

@@ -38,9 +38,12 @@
                                         <a href="{{route('edit-student', ['id' => $student->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="" class="btn btn-danger btn-sm">
+                                        <a href="{{route('delete-student', ['id' => $student->id])}}" class="btn btn-danger btn-sm" onclick="event.preventDefault(); document.getElementById('deleteStudentForm{{$student->id}}').submit();">
                                             <i class="fa fa-trash"></i>
                                         </a>
+                                        <form action="{{route('delete-student', ['id' => $student->id])}}" id="deleteStudentForm{{$student->id}}">
+                                            @csrf
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -51,4 +51,12 @@ class StudentController extends Controller
         return redirect('/manage-student')->with('message', 'Student info update successfully');
     }
 
+    public function delete($id)
+    {
+        $this->student = Student::find($id);
+        $this->student->delete();
+
+        return redirect('/manage-student')->with('message', 'Student info delete successfully');
+    }
+
 }
